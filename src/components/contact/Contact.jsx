@@ -15,7 +15,6 @@ function Contact() {
   const serviceId = import.meta.env.VITE_SERVICE_ID;
   const templateId = import.meta.env.VITE_TEMPLATE_ID;
   const publicKey = import.meta.env.VITE_PUBLIC_KEY;
-  const replyTemplateId = import.meta.env.VITE_REPLY_TEMPLATE_ID;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,27 +28,13 @@ function Contact() {
       .then(
         () => {
           alert("Message sent!");
+          setEmail("");
+          setMessage("");
         },
         (error) => {
           console.log("Error: ", error.text);
           alert("Something went wrong. Send again.");
         }
-      )
-      .then(
-        emailjs
-          .sendForm(serviceId, replyTemplateId, form.current, {
-            publicKey: publicKey,
-          })
-          .then(
-            () => {
-              console.log("Replied to user as well.");
-              setEmail("");
-              setMessage("");
-            },
-            (error) => {
-              console.log("Error replying back.", error.text);
-            }
-          )
       );
   };
 
