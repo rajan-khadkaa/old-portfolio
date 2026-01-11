@@ -1,7 +1,7 @@
 # Old Portfolio (Archived)
 
-This is my previous portfolio website.
-
+This is my old portfolio repository.
+<br><br>
 **View my latest portfolio here:**  
 https://rajankhadka-portfolio.vercel.app
 
